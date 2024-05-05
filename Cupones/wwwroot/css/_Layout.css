@@ -1,0 +1,138 @@
+﻿
+
+body {
+    background-color: white !important;
+}
+
+header {
+    background-color: #ffc738cc;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.navbar-nav {
+    flex: 1;
+    margin: auto !important;
+    display: flex;
+    justify-content: space-between;
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.navbar-nav :first-child {
+     margin-right: 100px !important;
+}
+.acc-btn{
+    border-radius:50%;
+    height:2em;
+    width:2em;
+    margin-top:1em;
+    background-color:black !important;
+}
+
+
+.bh-f:hover {
+    transition: 0.3s ease-out;
+    border-top: 10px solid #ff7a38ab;
+    border-bottom: 10px solid #ff7a38ab;
+    border-radius: 10%;
+}
+
+.bh-c {
+    border-top: 10px solid #ff4f27dc;
+}
+
+.border-top {
+    height: 80px;
+}
+
+.border-hover:hover {
+    transition: 0.2s;
+    border-top: 10px solid #ff4f27dc;
+}
+
+@media (max-width : 992px) {
+    .hed img {
+        width: 380px !important;
+        height: 480px;
+    }
+
+    .hero-content h1 {
+        font-size: 50px !important;
+    }
+
+    .hero-content h3 {
+        font-size: 16px !important;
+    }
+
+    .hero-content p {
+        font-size: 12px !important;
+    }
+}
+
+.hero-content h1 {
+    font-size: 70px;
+    font-family: sans-serif;
+    font-weight: 800;
+    color: white;
+    text-shadow: 0px 5px 9px rgba(110,89,6,0.63);
+}
+
+.hero-content h3 {
+    font-family: "Roboto", sans-serif;
+    color: white;
+    font-weight: 900;
+}
+
+.hero-content p {
+    font-family: "Roboto", sans-serif;
+    color: rgb(254, 248, 201);
+    font-weight: 900;
+    font-size: 14px;
+}
+
+.fixedd {
+    transition: 0.5s ease;
+}
+
+.scrolled {
+    background-color: #c83f3ff1 !important;
+    border-top: none;
+    transition: background-color 200ms linear;
+}
+
+main {
+    padding: 0 !important;
+    background: linear-gradient(to top, #856e3c, rgba(255,199,56,0.8));
+}
+
+.main-head {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+}
+
+.footer-content {
+    display: flex;
+    border-top: 1px #f7a94f5d solid;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-link {
+    margin-left: 1em;
+}
+
+    .footer-link img {
+        width: 30px;
+    }

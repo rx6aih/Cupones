@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Cupones</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/_Layout.css"/>
+    <script src="~/js/main.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="pb-5">
+            <div class="navbar fixedd navbar-expand-lg pt-4 fixed-top" id="navbar">
+                <div class="container-fluid">
+                    <a href="#" class="brand text-decoration-none d-block d-lg-none fw-bold fs-1 text-white">Cupones</a>
+                    <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul id="nav-length" class="navbar-nav border-top border-3 text-center">
+                            <li class="nav-item me-5">
+                                <a href="#" class="nav-link border-hover py-3  me-auto text-white">Главная</a>
+                            </li>
+                            <li class="nav-item d-flex">
+                                <a class="nav-link  bh-f py-3 me-5 ml-5 text-white" asp-controller="Home" asp-action="Kfc">KFC</a>
+                                <a class="nav-link  bh-f py-3 text-white">McDonald's</a>
+                            </li>
+                            
+                            <li class="nav-item d-flex">
+                                <button class="btn acc-btn"></button>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="container-sm pt-5 mt-5 d-flex col-lg-12 col-md-8 col-sm-12 hed">
+            <img src="~/img/pngimg.com - kfc_food_PNG30.png" alt="">
+            <div class="hero-content pt-5 ps-5">
+                <h1>Купоны!</h1>
+                <h3 class="mt-4">Это самый крутой сайт с купонами который  когда либо существовал</h3>
+                <p class="mt-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non, doloremque hic. Adipisci quia, aliquam cum porro explicabo iste inventore. Accusamus quidem doloremque distinctio omnis deserunt consequatur assumenda velit minima non ipsum repellendus recusandae ipsa provident delectus dolor consequuntur perferendis id numquam, necessitatibus dolorum tenetur? Labore neque odit illum. Repudiandae, iure.</p>
+            </div>
+        </div>
+    </header>
+  
+        <main class="d-flex justify-content-center" role="main" class="pb-3">
+            @RenderBody()
+        </main>
+
+
+    <footer>
+        <div class="footer-content col-lg-10 col-md-8 col-sm-6 justify-content-between">
+            <p class="mt-3 text-dark">saints</p>
+            <ul class="footer-links mt-3 d-flex">
+                <li class="footer-link">
+                    <a href="https://github.com/rx6aih">
+                        <img src="~/img/github.png" alt="">
+                    </a>
+                </li>
+                <li class="footer-link">
+                    <a href="https://vk.com/saintsrx">
+                        <img src="~/img/VK_Logo.png" alt="">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

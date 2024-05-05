@@ -1,0 +1,11 @@
+C:\c#\Web\AspEdu\Cupones.Domain\bin\Debug\net8.0\Cupones.Domain.deps.json
+C:\c#\Web\AspEdu\Cupones.Domain\bin\Debug\net8.0\Cupones.Domain.dll
+C:\c#\Web\AspEdu\Cupones.Domain\bin\Debug\net8.0\Cupones.Domain.pdb
+C:\c#\Web\AspEdu\Cupones.Domain\obj\Debug\net8.0\Cupones.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\c#\Web\AspEdu\Cupones.Domain\obj\Debug\net8.0\Cupones.Domain.AssemblyInfoInputs.cache
+C:\c#\Web\AspEdu\Cupones.Domain\obj\Debug\net8.0\Cupones.Domain.AssemblyInfo.cs
+C:\c#\Web\AspEdu\Cupones.Domain\obj\Debug\net8.0\Cupones.Domain.csproj.CoreCompileInputs.cache
+C:\c#\Web\AspEdu\Cupones.Domain\obj\Debug\net8.0\Cupones.Domain.dll
+C:\c#\Web\AspEdu\Cupones.Domain\obj\Debug\net8.0\refint\Cupones.Domain.dll
+C:\c#\Web\AspEdu\Cupones.Domain\obj\Debug\net8.0\Cupones.Domain.pdb
+C:\c#\Web\AspEdu\Cupones.Domain\obj\Debug\net8.0\ref\Cupones.Domain.dll

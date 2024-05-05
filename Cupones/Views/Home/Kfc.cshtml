@@ -1,0 +1,13 @@
+﻿@using Cupones.Domain.Entity
+@using Cupones.Domain.Entity.Implementations
+@using Cupones.Views.Shared.Components.KfcCupone
+
+@model List<KfcCupon>
+
+<div class="container col-lg-12">
+	@{
+		var some = Model;
+		var some2 = Model.Count;
+	}
+@await Component.InvokeAsync("KfcCupone",Model)
+</div>

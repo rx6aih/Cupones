@@ -1,0 +1,15 @@
+C:\c#\Web\AspEdu\Cupones.DAL\bin\Debug\net8.0\Cupones.DAL.deps.json
+C:\c#\Web\AspEdu\Cupones.DAL\bin\Debug\net8.0\Cupones.DAL.dll
+C:\c#\Web\AspEdu\Cupones.DAL\bin\Debug\net8.0\Cupones.DAL.pdb
+C:\c#\Web\AspEdu\Cupones.DAL\bin\Debug\net8.0\Cupones.Domain.dll
+C:\c#\Web\AspEdu\Cupones.DAL\bin\Debug\net8.0\Cupones.Domain.pdb
+C:\c#\Web\AspEdu\Cupones.DAL\obj\Debug\net8.0\Cupones.DAL.csproj.AssemblyReference.cache
+C:\c#\Web\AspEdu\Cupones.DAL\obj\Debug\net8.0\Cupones.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\c#\Web\AspEdu\Cupones.DAL\obj\Debug\net8.0\Cupones.DAL.AssemblyInfoInputs.cache
+C:\c#\Web\AspEdu\Cupones.DAL\obj\Debug\net8.0\Cupones.DAL.AssemblyInfo.cs
+C:\c#\Web\AspEdu\Cupones.DAL\obj\Debug\net8.0\Cupones.DAL.csproj.CoreCompileInputs.cache
+C:\c#\Web\AspEdu\Cupones.DAL\obj\Debug\net8.0\Cupones.DAL.csproj.CopyComplete
+C:\c#\Web\AspEdu\Cupones.DAL\obj\Debug\net8.0\Cupones.DAL.dll
+C:\c#\Web\AspEdu\Cupones.DAL\obj\Debug\net8.0\refint\Cupones.DAL.dll
+C:\c#\Web\AspEdu\Cupones.DAL\obj\Debug\net8.0\Cupones.DAL.pdb
+C:\c#\Web\AspEdu\Cupones.DAL\obj\Debug\net8.0\ref\Cupones.DAL.dll

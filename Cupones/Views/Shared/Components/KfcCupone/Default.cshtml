@@ -1,0 +1,18 @@
+﻿@using Cupones.Domain.Entity.Implementations
+@model List<KfcCupon>
+<head>
+	<link rel="stylesheet" href="~/css/Kfc.css"/>
+</head>
+
+    @{
+        var some = Model;
+        var some2 = Model.Count;
+    }
+@foreach (KfcCupon cupon in Model)
+{
+		<div class="btn px-2">
+			<a href="@cupon.OriginLink">
+				<img src="@cupon.Image" alt="asd">
+			</a>
+		</div>
+}
