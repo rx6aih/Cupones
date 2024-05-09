@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 
 namespace Cupones.Service.Implementations
 {
-	public class MacCuponService : ICuponService<MacCupon>
+	public class MacCuponService : CuponService<MacCupon>
 	{
 		//Сайт для запроса html документа
 		string site = "https://api.zenrows.com/v1/?apikey=af8faf316c099308b06a49bf5da1c979ca447f4a&url=https%3A%2F%2Fvkusnotochkamenu.ru%2Fkupon%2F";
@@ -31,7 +31,7 @@ namespace Cupones.Service.Implementations
 		}
 
 		//мектод для получения списка купонов с сайта. Возвращает ответ в виде статуса и данных
-		public async Task<IBaseResponse<List<MacCupon>>> Fetch()
+		public  override async Task<IBaseResponse<List<MacCupon>>> Fetch()
 		{
 			HtmlUtility htmlUtility = new HtmlUtility();
 			HtmlDocument doc = await htmlUtility.FetchSiteHtml(site);
@@ -74,7 +74,7 @@ namespace Cupones.Service.Implementations
 			};
 		}
 
-		public async Task<IBaseResponse<List<MacCupon>>> GetAll()
+		public override async Task<IBaseResponse<List<MacCupon>>> GetAll()
 		{
 			try
 			{
@@ -115,37 +115,9 @@ namespace Cupones.Service.Implementations
 
 		//метод проверяет совпадает ли дата обновления купонов с сегодняшней,
 		//и если нет - то удаляет все строки и заполняет их новыми данными
-		public async Task<Domain.Response.IBaseResponse<List<MacCupon>>> CurrentGetAll()
+		public override IBaseResponse<List<MacCupon>> CurrentGetAll()
 		{
-			var cupons = GetAll().Result.Data.Where(x => x.UpdatedDate != DateTime.Today);
-			if (cupons == null)
-			{
-				return new BaseResponse<List<MacCupon>>()
-				{
-					Description = "Новых купонов нет",
-					Data = GetAll().Result.Data,
-					StatusCode = StatusCode.OK
-				};
-			}
-			else
-			{
-				foreach (var cupon in _repository.GetAll()) 
-					_repository.Delete(cupon);
-
-				List<MacCupon> NewCupons = Fetch().Result.Data;
-
-				foreach(var cupon in NewCupons)
-				{
-					await _repository.Create(cupon);
-				}
-				
-				return new BaseResponse<List<MacCupon>>()
-				{
-					Description = "Новые купоны возможно есть",
-					Data = NewCupons,
-					StatusCode = Domain.Enum.StatusCode.Updated
-				};
-			}
+			return base.CurrentGetAll();
 		}
 	}
 }

@@ -4,15 +4,15 @@
 	<link rel="stylesheet" href="~/css/Kfc.css"/>
 </head>
 
-    @{
-        var some = Model;
-        var some2 = Model.Count;
-    }
-@foreach (KfcCupon cupon in Model)
+@{
+	int i = 0;
+	foreach (KfcCupon cupon in Model)
 {
-		<div class="btn px-2">
+		<div class="btn px-2" id="@i">
 			<a href="@cupon.OriginLink">
 				<img src="@cupon.Image" alt="asd">
 			</a>
 		</div>
+		i++;
+	}
 }

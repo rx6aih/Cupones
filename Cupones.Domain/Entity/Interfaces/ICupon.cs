@@ -10,5 +10,6 @@ namespace Cupones.Domain.Entity.Interfaces
 	{
 		protected string Description { get; set; }
 		protected string Image {  get; set; }
+		public int ReactionsCount {  get; set; }
 	}
 }

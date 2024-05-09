@@ -16,11 +16,11 @@ using Microsoft.EntityFrameworkCore;
 using Cupones.Domain.Enum;
 namespace Cupones.Service.Implementations
 {
-	public class KfcCuponService : ICuponService<KfcCupon>
+	public class KfcCuponService : CuponService<KfcCupon>
 	{
 		//Сайт для запроса html документа
 		string site = "https://rostics.ru/coupons";
-        string cuponImagePage = "https://rostics.ru/product/";
+		string cuponImagePage = "https://rostics.ru/product/";
 
 		//экземпляр репозитория и логера
 		private readonly IBaseRepository<KfcCupon> _repository;
@@ -33,7 +33,7 @@ namespace Cupones.Service.Implementations
 		}
 
 		//мектод для получения списка купонов с сайта. Возвращает ответ в виде статуса и данных
-		public async Task<IBaseResponse<List<KfcCupon>>> Fetch()
+		public override async Task<IBaseResponse<List<KfcCupon>>> Fetch()
 		{
 			HtmlUtility htmlUtility = new HtmlUtility();
 			HtmlDocument doc = await htmlUtility.FetchSiteHtml(site);
@@ -48,13 +48,13 @@ namespace Cupones.Service.Implementations
 				int is5050 = Convert.ToInt32(RawCuponesList[i]
 					.SelectSingleNode(".//a/div[2]/text()")
 					.InnerText);
-				
+
 				//получение ссылки на страницу купона с изображением
 				var RawImagePage = htmlUtility
 					.FetchSiteHtml(cuponImagePage + RawCuponesList[i]
 					.SelectSingleNode(".//a/div[2]/text()")
 					.InnerText);
-				
+
 				//получение изображения
 				string rawImage = RawImagePage.Result.DocumentNode
 					.SelectSingleNode("//*[@id=\"root\"]/div/div[2]/div[1]/div[1]/div/div[1]/div[2]/img/@src")
@@ -91,7 +91,7 @@ namespace Cupones.Service.Implementations
 			};
 		}
 
-		public async Task<IBaseResponse<List<KfcCupon>>> GetAll()
+		public override async Task<IBaseResponse<List<KfcCupon>>> GetAll()
 		{
 			try
 			{
@@ -103,10 +103,10 @@ namespace Cupones.Service.Implementations
 						Id = x.Id,
 						Image = x.Image,
 						IsExpiring = x.IsExpiring,
-						OriginLink = x.OriginLink,
+						OriginLink = x.OriginLink
 					})
 					.ToListAsync();
-				if (cupons.Count==0)
+				if (cupons.Count == 0)
 				{
 					return new BaseResponse<List<KfcCupon>>()
 					{
@@ -131,30 +131,12 @@ namespace Cupones.Service.Implementations
 				};
 			}
 		}
-
 		//метод проверяет совпадает ли дата обновления купонов с сегодняшней,
 		//и если нет - то удаляет все строки и заполняет их новыми данными
-		public async Task<IBaseResponse<List<KfcCupon>>> CurrentGetAll()
+		public override IBaseResponse<List<KfcCupon>> CurrentGetAll()
 		{
-			var someCupons = _repository.GetAll().ToList();
-
-			var cupons = _repository.GetAll().Where(x => x.UpdatedDate != DateTime.Today).ToList().Count;
-            if (cupons==0)
-			{
-				return new BaseResponse<List<KfcCupon>>()
-				{
-					Description = "Новых купонов нет",
-					Data = GetAll().Result.Data,
-					StatusCode = StatusCode.OK
-				};
-			}
-			else
-				return new BaseResponse<List<KfcCupon>>()
-				{
-					Description = "Новые купоны возможно есть",
-					Data = Fetch().Result.Data,
-					StatusCode = Domain.Enum.StatusCode.Updated
-				};
+			return base.CurrentGetAll();
 		}
+
 	}
 }

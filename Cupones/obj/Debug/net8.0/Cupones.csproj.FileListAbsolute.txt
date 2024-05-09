@@ -42,4 +42,3 @@ C:\c#\Web\AspEdu\Cupones\obj\Debug\net8.0\refint\Cupones.dll
 C:\c#\Web\AspEdu\Cupones\obj\Debug\net8.0\Cupones.pdb
 C:\c#\Web\AspEdu\Cupones\obj\Debug\net8.0\Cupones.genruntimeconfig.cache
 C:\c#\Web\AspEdu\Cupones\obj\Debug\net8.0\ref\Cupones.dll
-C:\c#\Web\AspEdu\Cupones\obj\Debug\net8.0\scopedcss\Views\Home\Kfc.cshtml.rz.scp.css

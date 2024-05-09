@@ -18,7 +18,37 @@
         justify-content: center;
         align-items: center;
     }
+.btn-reactions {
+    display: flex;
+    position: absolute;
+    z-index: 2;
+    bottom: -3em;
+    left: 2em;
+    opacity: 0;
+    transition: 0.1s;
+}
 
+    .btn-reactions button {
+        border-radius: 10%;
+        width: 4em;
+        border-style: none;
+        color: white;
+    }
+
+        .btn-reactions button:nth-child(1) {
+            background-color: rgba(0, 255, 42, 0.096);
+            margin-right: 5.5em;
+        }
+
+        .btn-reactions button:nth-child(2) {
+            background-color: rgba(255, 98, 0, 0.096);
+        }
+
+.btn:hover .btn-reactions {
+    transition: 0.5s;
+    transition-delay: 1s;
+    opacity: 100%;
+}
         .container .btn a {
             position: absolute;
             top: 0;

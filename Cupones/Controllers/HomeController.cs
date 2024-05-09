@@ -1,3 +1,4 @@
+using Cupones.DAL.Repositories;
 using Cupones.Domain.Entity.Implementations;
 using Cupones.Models;
 using Cupones.Service.Implementations;
@@ -10,9 +11,9 @@ namespace Cupones.Controllers
 {
 	public class HomeController : Controller
 	{
-		private readonly ICuponService<KfcCupon> _Kfcservice;
+		private readonly CuponService<KfcCupon> _Kfcservice;
 
-		public HomeController(ICuponService<KfcCupon> KfcService)
+		public HomeController(CuponService<KfcCupon> KfcService)
 		{
 			_Kfcservice = KfcService;
 		}
@@ -29,8 +30,7 @@ namespace Cupones.Controllers
 
 		public IActionResult Kfc()
 		{
-			var some = _Kfcservice.CurrentGetAll().Result.Data;
-			List<KfcCupon> cList = _Kfcservice.CurrentGetAll().Result.Data;
+			List<KfcCupon> cList = _Kfcservice.CurrentGetAll().Data;
 			return View(cList);
 		}
 
