@@ -1,0 +1,17 @@
+﻿@using Cupones.Domain.Entity.Implementations
+@model List<KfcCupon>
+<head>
+	<link rel="stylesheet" href="~/css/KfcExtra.css" />
+</head>
+
+@{
+	foreach (KfcCupon cupon in Model)
+		if(cupon.Code==5050 || cupon.Code==5567)
+	{
+		<div class="btn px-2">
+			<a href="@cupon.OriginLink">
+				<img src="@cupon.Image" alt="asd">
+			</a>
+		</div>
+	}
+}

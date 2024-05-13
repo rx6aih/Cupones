@@ -19,8 +19,10 @@ namespace Cupones
 			builder.Services.AddControllersWithViews();
 
 			builder.Services.AddScoped<IBaseRepository<KfcCupon>, KfcRepository>();
+			builder.Services.AddScoped<IBaseRepository<MacCupon>, MacRepository>();
             builder.Services.AddScoped<CuponService<KfcCupon>, KfcCuponService>();
-			AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+            builder.Services.AddScoped<CuponService<MacCupon>, MacCuponService>();
+            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
 			var connectionString = builder.Configuration.GetConnectionString("NPGSQL");
 			builder.Services.AddDbContext<AppDBContext>(options =>

@@ -3,7 +3,10 @@
 @using Cupones.Views.Shared.Components.KfcCupone
 
 @model List<KfcCupon>
-
-<div class="container col-lg-12">
+<div class="container-lg col-lg-12 col-sm-2">
+	<h4 class="text-white">ВРЕМЕННЫЕ КУПОНЫ</h4>
+	@await Component.InvokeAsync("KfcExtraCupone", Model)
+</div>
+<div class="container col-lg-12" id="react-btn">
 @await Component.InvokeAsync("KfcCupone",Model)
 </div>

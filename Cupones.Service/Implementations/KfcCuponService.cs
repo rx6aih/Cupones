@@ -14,6 +14,13 @@ using Cupones.DAL.Interfaces;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using Cupones.Domain.Enum;
+using Cupones.DAL.Repositories;
+using System.Runtime.InteropServices;
+using Cupones.Domain.Entity.User;
+using System.Security.Claims;
+using System.Net.Http;
+using System.Web;
+using Microsoft.AspNetCore.Http;
 namespace Cupones.Service.Implementations
 {
 	public class KfcCuponService : CuponService<KfcCupon>
@@ -22,15 +29,18 @@ namespace Cupones.Service.Implementations
 		string site = "https://rostics.ru/coupons";
 		string cuponImagePage = "https://rostics.ru/product/";
 
+		int userId;
+
 		//экземпляр репозитория и логера
 		private readonly IBaseRepository<KfcCupon> _repository;
+		private readonly IBaseRepository<UserCupon> _userCuponrepository;
 		private ILogger<KfcCuponService> _logger;
-
 		public KfcCuponService(IBaseRepository<KfcCupon> repository, ILogger<KfcCuponService> logger)
 		{
 			this._repository = repository;
 			this._logger = logger;
 		}
+
 
 		//мектод для получения списка купонов с сайта. Возвращает ответ в виде статуса и данных
 		public override async Task<IBaseResponse<List<KfcCupon>>> Fetch()
@@ -135,7 +145,34 @@ namespace Cupones.Service.Implementations
 		//и если нет - то удаляет все строки и заполняет их новыми данными
 		public override IBaseResponse<List<KfcCupon>> CurrentGetAll()
 		{
-			return base.CurrentGetAll();
+			var cupons = _repository.GetAll().Where(x => x.UpdatedDate != DateTime.Today.Date).ToList().Count;
+			if (cupons != 0)
+			{
+				return new BaseResponse<List<KfcCupon>>()
+				{
+					Description = "Новых купонов нет",
+					Data = GetAll().Result.Data,
+					StatusCode = StatusCode.OK
+				};
+			}
+			else
+				return new BaseResponse<List<KfcCupon>>()
+				{
+					Description = "Новые купоны возможно есть",
+					Data = Fetch().Result.Data,
+					StatusCode = Domain.Enum.StatusCode.Updated
+				};
+		}
+
+		public override void GetLikes(KfcCupon cupon)
+		{
+			var haveReaction = _userCuponrepository.GetAll().Where(x => x.UserId == userId && x.CuponId == cupon.Id).FirstOrDefault();
+			if (haveReaction != null)
+			{
+				haveReaction.Reaction = 1;
+				cupon.LikesCount++;
+			}
+			cupon.LikesCount = 100;
 		}
 
 	}

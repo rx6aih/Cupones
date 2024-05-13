@@ -20,17 +20,17 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul id="nav-length" class="navbar-nav border-top border-3 text-center">
+                        <ul id="nav-length" class="navbar-nav text-center">
                             <li class="nav-item me-5">
-                                <a href="#" class="nav-link border-hover py-3  me-auto text-white">Главная</a>
+                                <a class="nav-link border-hover py-3  me-auto text-white" asp-controller="Home" asp-action="Index">Главная</a>
                             </li>
                             <li class="nav-item d-flex">
                                 <a class="nav-link  bh-f py-3 me-5 ml-5 text-white" asp-controller="Home" asp-action="Kfc">KFC</a>
-                                <a class="nav-link  bh-f py-3 text-white">McDonald's</a>
+                                <a class="nav-link  bh-f py-3 text-white" asp-controller="Home" asp-action="Mac">McDonald's</a>
                             </li>
                             
                             <li class="nav-item d-flex">
-                                <button class="btn acc-btn"></button>
+                                <button class="btn acc-btn">saintsrx</button>
                             </li>
 
                         </ul>
@@ -48,7 +48,7 @@
         </div>
     </header>
   
-        <main class="d-flex justify-content-center" role="main" class="pb-3">
+        <main class="justify-content-center" role="main">
             @RenderBody()
         </main>
 

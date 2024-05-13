@@ -18,7 +18,8 @@ namespace Cupones.Service.Implementations
 	public class MacCuponService : CuponService<MacCupon>
 	{
 		//Сайт для запроса html документа
-		string site = "https://api.zenrows.com/v1/?apikey=af8faf316c099308b06a49bf5da1c979ca447f4a&url=https%3A%2F%2Fvkusnotochkamenu.ru%2Fkupon%2F";
+		string site = "https://vkusnotochkamenu.ru/kupon/";
+		string cuponImagePage = "https://vkusnotochkamenu.ru/info/";
 
 		//экземпляр репозитория и логера
 		private readonly IBaseRepository<MacCupon> _repository;
@@ -36,7 +37,7 @@ namespace Cupones.Service.Implementations
 			HtmlUtility htmlUtility = new HtmlUtility();
 			HtmlDocument doc = await htmlUtility.FetchSiteHtml(site);
 
-			var RawCuponesList = doc.DocumentNode.SelectNodes("//*[@id=\"root\"]/div/div[2]/div[2]/*");
+			var RawCuponesList = doc.DocumentNode.SelectNodes("/html/body/div[2]/div/div/div/div[1]/*");
 
 			List<MacCupon> FinalCuponesList = new List<MacCupon>();
 
@@ -117,7 +118,28 @@ namespace Cupones.Service.Implementations
 		//и если нет - то удаляет все строки и заполняет их новыми данными
 		public override IBaseResponse<List<MacCupon>> CurrentGetAll()
 		{
-			return base.CurrentGetAll();
+            var cupons = _repository.GetAll().Where(x => x.UpdatedDate != DateTime.Today.Date).ToList().Count;
+            if (cupons != 0)
+            {
+                return new BaseResponse<List<MacCupon>>()
+                {
+                    Description = "Новых купонов нет",
+                    Data = GetAll().Result.Data,
+                    StatusCode = StatusCode.OK
+                };
+            }
+            else
+                return new BaseResponse<List<MacCupon>>()
+                {
+                    Description = "Новые купоны возможно есть",
+                    Data = Fetch().Result.Data,
+                    StatusCode = Domain.Enum.StatusCode.Updated
+                };
+        }
+
+		public override void GetLikes(MacCupon cupon)
+		{
+			throw new NotImplementedException();
 		}
 	}
 }

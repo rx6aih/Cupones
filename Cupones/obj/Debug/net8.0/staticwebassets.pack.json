@@ -9,8 +9,16 @@
       "PackagePath": "staticwebassets\\css\\Kfc.css"
     },
     {
+      "Id": "C:\\c#\\Web\\AspEdu\\Cupones\\wwwroot\\css\\KfcExtra.css",
+      "PackagePath": "staticwebassets\\css\\KfcExtra.css"
+    },
+    {
       "Id": "C:\\c#\\Web\\AspEdu\\Cupones\\wwwroot\\css\\_Layout.css",
       "PackagePath": "staticwebassets\\css\\_Layout.css"
+    },
+    {
+      "Id": "C:\\c#\\Web\\AspEdu\\Cupones\\wwwroot\\css\\main.css",
+      "PackagePath": "staticwebassets\\css\\main.css"
     },
     {
       "Id": "C:\\c#\\Web\\AspEdu\\Cupones\\wwwroot\\css\\site.css",
@@ -25,8 +33,20 @@
       "PackagePath": "staticwebassets\\img\\VK_Logo.png"
     },
     {
+      "Id": "C:\\c#\\Web\\AspEdu\\Cupones\\wwwroot\\img\\concerned-cat-meme-circle-gesqt5r6phdzgwz0.png",
+      "PackagePath": "staticwebassets\\img\\concerned-cat-meme-circle-gesqt5r6phdzgwz0.png"
+    },
+    {
+      "Id": "C:\\c#\\Web\\AspEdu\\Cupones\\wwwroot\\img\\dis.png",
+      "PackagePath": "staticwebassets\\img\\dis.png"
+    },
+    {
       "Id": "C:\\c#\\Web\\AspEdu\\Cupones\\wwwroot\\img\\github.png",
       "PackagePath": "staticwebassets\\img\\github.png"
+    },
+    {
+      "Id": "C:\\c#\\Web\\AspEdu\\Cupones\\wwwroot\\img\\like_PNG49.png",
+      "PackagePath": "staticwebassets\\img\\like_PNG49.png"
     },
     {
       "Id": "C:\\c#\\Web\\AspEdu\\Cupones\\wwwroot\\img\\pngimg.com - kfc_food_PNG30.png",

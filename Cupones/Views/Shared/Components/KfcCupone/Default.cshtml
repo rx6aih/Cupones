@@ -5,14 +5,23 @@
 </head>
 
 @{
-	int i = 0;
 	foreach (KfcCupon cupon in Model)
 {
-		<div class="btn px-2" id="@i">
+		<div class="btn px-2">
 			<a href="@cupon.OriginLink">
 				<img src="@cupon.Image" alt="asd">
 			</a>
+			<div class="btn-reactions">
+				<button asp-controller="Home" asp-action="Like" type="submit">
+					<img src="~/img/like_PNG49.png"/>
+					@cupon.LikesCount
+				</button>
+				<button asp-controller="Home" asp-action="Dislike" type="submit">
+					<img src="~/img/dis.png"/>
+					@cupon.DislikesCount
+				</button>
+
+			</div>
 		</div>
-		i++;
 	}
 }

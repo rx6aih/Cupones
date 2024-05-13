@@ -16,7 +16,7 @@ namespace Cupones.Controllers.Account
         {
             db = context;
         }
-		int CurrentUserId => int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+		public int CurrentUserId => int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
 		public IActionResult Index()
         {
             return View();

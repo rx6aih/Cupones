@@ -16,6 +16,7 @@ namespace Cupones.DAL.EF
 			Database.EnsureCreated();
 		}
 		public DbSet<User> Users { get; set; }
+		public DbSet<UserCupon> UserCupons { get; set; }
 		public DbSet<KfcCupon> KfcCupons { get; set; }
 		public DbSet<MacCupon> MacCupons { get; set; }
 	}
