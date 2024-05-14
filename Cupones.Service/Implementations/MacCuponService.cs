@@ -64,7 +64,7 @@ namespace Cupones.Service.Implementations
 
 					UpdatedDate = DateTime.Today
 				};
-
+				_repository.Create(cupon);
 				FinalCuponesList.Add(cupon);
 			}
 

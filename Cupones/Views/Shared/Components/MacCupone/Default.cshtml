@@ -1,0 +1,19 @@
+﻿@using Cupones.Domain.Entity.Implementations
+@model List<MacCupon>
+<head>
+	<link rel="stylesheet" href="~/css/Mac.css" />
+</head>
+
+@{
+	foreach (MacCupon cupon in Model)
+	{
+		<div class="btn mac px-2">
+			<a href="@cupon.OriginLink">
+				<img src="@cupon.Image" alt="asd">
+			</a>
+			<div class="btn-reactions">
+				<p class="text-white pt-5">@cupon.Description</p>
+			</div>
+		</div>
+	}
+}

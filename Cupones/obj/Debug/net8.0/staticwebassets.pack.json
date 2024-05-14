@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\css\\KfcExtra.css"
     },
     {
+      "Id": "C:\\c#\\Web\\AspEdu\\Cupones\\wwwroot\\css\\Mac.css",
+      "PackagePath": "staticwebassets\\css\\Mac.css"
+    },
+    {
       "Id": "C:\\c#\\Web\\AspEdu\\Cupones\\wwwroot\\css\\_Layout.css",
       "PackagePath": "staticwebassets\\css\\_Layout.css"
     },

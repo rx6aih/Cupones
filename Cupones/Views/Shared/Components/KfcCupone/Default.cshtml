@@ -12,14 +12,7 @@
 				<img src="@cupon.Image" alt="asd">
 			</a>
 			<div class="btn-reactions">
-				<button asp-controller="Home" asp-action="Like" type="submit">
-					<img src="~/img/like_PNG49.png"/>
-					@cupon.LikesCount
-				</button>
-				<button asp-controller="Home" asp-action="Dislike" type="submit">
-					<img src="~/img/dis.png"/>
-					@cupon.DislikesCount
-				</button>
+				<h3 class="text-white text-end pt-5">@cupon.Code</h3>
 
 			</div>
 		</div>

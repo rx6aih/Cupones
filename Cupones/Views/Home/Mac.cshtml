@@ -1,5 +1,8 @@
 ﻿@using Cupones.Domain.Entity
 @using Cupones.Domain.Entity.Implementations
-@using Cupones.Views.Shared.Components.
+@using Cupones.Views.Shared.Components.MacCupone
 
-@model List<MacCupone>
+@model List<MacCupon>
+<div class="container col-lg-12" id="react-btn">
+	@await Component.InvokeAsync("MacCupone", Model)
+</div>

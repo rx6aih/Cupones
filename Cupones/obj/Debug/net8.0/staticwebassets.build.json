@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "n2S6c3UK8nBA2xhz811DPMvBxBANW+Cwa86NI0QDlqg=",
+  "Hash": "mGjC0YFELAFMgZXuqr8TnazAP/tC42ObjDfDmL7sQ4A=",
   "Source": "Cupones",
   "BasePath": "_content/Cupones",
   "Mode": "Default",
@@ -110,6 +110,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\KfcExtra.css"
+    },
+    {
+      "Identity": "C:\\c#\\Web\\AspEdu\\Cupones\\wwwroot\\css\\Mac.css",
+      "SourceId": "Cupones",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\c#\\Web\\AspEdu\\Cupones\\wwwroot\\",
+      "BasePath": "_content/Cupones",
+      "RelativePath": "css/Mac.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Mac.css"
     },
     {
       "Identity": "C:\\c#\\Web\\AspEdu\\Cupones\\wwwroot\\css\\main.css",

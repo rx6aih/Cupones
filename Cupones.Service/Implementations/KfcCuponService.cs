@@ -27,11 +27,12 @@ namespace Cupones.Service.Implementations
 	{
 		//Сайт для запроса html документа
 		string site = "https://rostics.ru/coupons";
-		string cuponImagePage = "https://rostics.ru/product/";
+        //Сайт для запроса html документа картинки
+        string cuponImagePage = "https://rostics.ru/product/";
 
 		int userId;
 
-		//экземпляр репозитория и логера
+		//экземпляры репозиториев и логера
 		private readonly IBaseRepository<KfcCupon> _repository;
 		private readonly IBaseRepository<UserCupon> _userCuponrepository;
 		private ILogger<KfcCuponService> _logger;
